@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Damon" />
+    <meta name="description" content="" />
+    <!-- main style css -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/all.min.css" />
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/bootstrap.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="logo.jpg" type="img/x-icon" />
+    <title>Tic Tac Toe game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Kumbh+Sans:wght@100;300;400;500;600;700;800;900&family=Outfit:wght@100..900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/533e5d4e51.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body
+    class="min-vh-100 position-relative d-flex justify-content-center align-items-center"
+  >
+    <!-- Start Main -->
+    <main class="">
+      <!-- Start Logo -->
+      <div class="main-logo mb-4 d-flex justify-content-center gap-2">
+        <img
+          src="https://mrfinesse47.github.io/tic-tac-toe/assets/icon-x.svg"
+          alt=""
+        />
+        <img
+          src="https://mrfinesse47.github.io/tic-tac-toe/assets/icon-o.svg"
+          alt=""
+        />
+      </div>
+      <!-- End Logo -->
+      <!-- Start Player -->
+      <div class="player text-center pt-4 px-3 pb-1 custom-rounded">
+        <p class="fw-semibold">PICK PLAYER 1'S MARK</p>
+        <div
+          class="logo p-2 my-3 d-flex justify-content-center gap-2 custom-rounded"
+        >
+          <div class="x-turn w-100 p-2 custom-rounded cursor-pointer">
+            <img
+              src="https://mrfinesse47.github.io/tic-tac-toe/assets/icon-x-silver.svg"
+              class="py-1"
+              alt=""
+            />
+          </div>
+          <div class="o-turn w-100 p-2 custom-rounded cursor-pointer active">
+            <img
+              src="https://mrfinesse47.github.io/tic-tac-toe/assets/icon-o-silver.svg"
+              class="py-1"
+              alt=""
+            />
+          </div>
+        </div>
+        <p>REMEMBER: X GOES FIRST</p>
+      </div>
+      <!-- End Player -->
+      <!-- Start Btns -->
+      <div class="btns mt-4">
+        <button
+          data-type="cpu"
+          class="w-100 custom-rounded cursor-pointer py-4 fs-6 fw-semibold border-0 outline-0 mb-2"
+        >
+          New Game (vs CPU)
+        </button>
+        <button
+          data-type="player"
+          class="w-100 custom-rounded cursor-pointer py-4 fs-6 fw-semibold border-0 outline-0"
+        >
+          New Game (vs Player)
+        </button>
+      </div>
+      <!-- End Btns -->
+    </main>
+    <!-- End Main -->
+    <!-- Start Section -->
+    <section class="d-none">
+      <header>
+        <div class="row align-items-center">
+          <div class="col-4 d-flex gap-2">
+            <img
+              src="https://mrfinesse47.github.io/tic-tac-toe/assets/icon-x.svg"
+              alt=""
+            />
+            <img
+              src="https://mrfinesse47.github.io/tic-tac-toe/assets/icon-o.svg"
+              alt=""
+            />
+          </div>
+          <div class="col-4 player-turn">
+            <div
+              class="box py-3 d-flex align-items-center justify-content-center gap-2 rounded"
+            >
+              <img
+                src="https://mrfinesse47.github.io/tic-tac-toe/assets/icon-x-silver.svg"
+                alt=""
+              />
+              <span class="fs-sm-5 fs-6 fw-semibold text-uppercase">Turn</span>
+            </div>
+          </div>
+          <div class="col-4 restart">
+            <div class="box p-3 custom-rounded cursor-pointer d-inline-block">
+              <img
+                src="https://mrfinesse47.github.io/tic-tac-toe/assets/icon-restart.svg"
+                alt=""
+                style="width: 22px"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="game my-4">
+        <div class="row row-gap-4">
+          <div class="col-4">
+            <div
+              class="box space d-flex align-items-center justify-content-center custom-rounded cursor-pointer position-relative"
+            ></div>
+          </div>
+          <div class="col-4">
+            <div
+              class="box space d-flex align-items-center justify-content-center custom-rounded cursor-pointer position-relative"
+            ></div>
+          </div>
+          <div class="col-4">
+            <div
+              class="box space d-flex align-items-center justify-content-center custom-rounded cursor-pointer position-relative"
+            ></div>
+          </div>
+          <div class="col-4">
+            <div
+              class="box space d-flex align-items-center justify-content-center custom-rounded cursor-pointer position-relative"
+            ></div>
+          </div>
+          <div class="col-4">
+            <div
+              class="box space d-flex align-items-center justify-content-center custom-rounded cursor-pointer position-relative"
+            ></div>
+          </div>
+          <div class="col-4">
+            <div
+              class="box space d-flex align-items-center justify-content-center custom-rounded cursor-pointer position-relative"
+            ></div>
+          </div>
+          <div class="col-4">
+            <div
+              class="box space d-flex align-items-center justify-content-center custom-rounded cursor-pointer position-relative"
+            ></div>
+          </div>
+          <div class="col-4">
+            <div
+              class="box space d-flex align-items-center justify-content-center custom-rounded cursor-pointer position-relative"
+            ></div>
+          </div>
+          <div class="col-4">
+            <div
+              class="box space d-flex align-items-center justify-content-center custom-rounded cursor-pointer position-relative"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="row">
+          <div class="col-4">
+            <div class="player-1 custom-rounded py-2 text-center">
+              <p class="m-0 fs-6 text-uppercase">X (CPU)</p>
+              <span class="fw-semibold x-score fs-4">0</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="tie custom-rounded py-2 text-center">
+              <p class="m-0 fs-6">Ties</p>
+              <span class="fw-semibold tie-score fs-4">0</span>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="player-2 custom-rounded py-2 text-center">
+              <p class="m-0 fs-6 text-uppercase">O (YOU)</p>
+              <span class="fw-semibold o-score fs-4">0</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <!-- End Section -->
+    <div class="restart-pop-up d-none position-absolute py-4 text-center w-100">
+      <h1 class="mt-5 text-uppercase">RESTART GAME?</h1>
+      <div class="btns d-flex gap-3 justify-content-center my-5">
+        <button
+          class="back-btn py-2 px-3 custom-rounded border-0 outline-0 fw-semibold fs-5"
+        >
+          NO, CANCEL
+        </button>
+        <button
+          onclick="restartGame()"
+          class="rest-btn py-2 px-3 custom-rounded border-0 outline-0 fw-semibold fs-5"
+        >
+          YES, RESTART
+        </button>
+      </div>
+    </div>
+    <div class="result-pop-up position-absolute py-4 text-center w-100 d-none">
+      <p class="mb-2 mt-2 mt-sm-5 fs-6"></p>
+      <div
+        class="text-uppercase d-flex gap-3 align-items-center justify-content-center"
+      >
+        <img src="" alt="" />
+        <h1 class="m-0 fw-bold">TAKES THE ROUND</h1>
+      </div>
+      <div
+        class="btns d-flex gap-3 justify-content-center pt-2 pt-sm-0 my-2 my-sm-5"
+      >
+        <button
+          onclick="location.reload()"
+          class="quit-btn py-2 px-3 custom-rounded border-0 outline-0 fw-semibold fs-5"
+        >
+          Quit
+        </button>
+        <button
+          onclick="restartGame()"
+          class="next-btn py-2 px-3 custom-rounded border-0 outline-0 fw-semibold fs-5"
+        >
+          Next Round
+        </button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="bootstrap-5.3.2-dist/bootstrap.bundle.min.js"></script>
+    <script src="fontawesome-free-6.5.1-web/all.min.js"></script>
+  </body>
+</html>

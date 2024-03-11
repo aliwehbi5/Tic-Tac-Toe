@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --main-color: #1f3641;
+  --gray-color: #a8bfc9;
+  --blue-color: #31c3bd;
+  --yellow-color: #f2b137;
+  --bg-color: #1a2a33;
+  --main-shadow: inset 0px -8px 0px #10212a;
+  --img-url: intial-value;
+  --main-transition: 0.3s;
+}
+body {
+  font-family: "Outfit", sans-serif !important;
+  background-color: var(--bg-color) !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+.main-logo img {
+  width: 40px;
+}
+.active {
+  background-color: var(--gray-color);
+}
+.active img {
+  filter: hue-rotate(200deg) invert(1) contrast(1);
+  -webkit-filter: hue-rotate(200deg) invert(1) contrast(1);
+}
+.player {
+  background-color: var(--main-color);
+  box-shadow: var(--main-shadow);
+}
+.player .logo {
+  background-color: var(--bg-color);
+}
+.player .logo img {
+  width: 30px;
+}
+.player p {
+  color: var(--gray-color);
+}
+.custom-rounded {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+@media (min-width: 501px) {
+  main,
+  section {
+    min-width: 460px;
+  }
+}
+@media (max-width: 500px) {
+  main,
+  section {
+    min-width: 330px;
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.btns button {
+  color: var(--bg-color);
+  letter-spacing: 1px;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+button[data-type="cpu"] {
+  background-color: var(--yellow-color);
+  box-shadow: inset 0px -8px 0px #cc8b13;
+  margin-top: 8px;
+}
+button[data-type="cpu"]:hover {
+  background-color: #ffc860;
+}
+button[data-type="player"] {
+  background-color: var(--blue-color);
+  box-shadow: inset 0px -8px 0px #118c87;
+  margin-top: 8px;
+}
+button[data-type="player"]:hover {
+  background-color: #65e9e4;
+}
+section header img {
+  width: 1.6rem;
+}
+section header .player-turn .box {
+  background-color: var(--main-color);
+  box-shadow: inset 0px -4px 0px #10212a;
+  margin-top: -4px;
+}
+section header .player-turn span {
+  color: var(--gray-color);
+}
+section header .restart .box {
+  background-color: var(--gray-color);
+  box-shadow: inset 0px -5px 0px #6b8997;
+  margin-top: -5px;
+  margin-left: calc(100% - 54px) !important;
+}
+.game .box {
+  min-height: 140px;
+  background-color: var(--main-color);
+  box-shadow: var(--main-shadow);
+  margin-top: -8px;
+}
+@media (max-width: 500px) {
+  .game .box {
+    min-height: 100px;
+  }
+}
+.player-1 {
+  background-color: var(--blue-color);
+}
+.tie {
+  background-color: var(--gray-color);
+}
+.player-2 {
+  background-color: var(--yellow-color);
+}
+.game .space::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+.restart-pop-up,
+.result-pop-up {
+  background-color: var(--main-color);
+  z-index: 10;
+}
+.restart-pop-up h1 {
+  color: var(--gray-color);
+}
+.restart-pop-up .btns button,
+.result-pop-up .btns button {
+  color: var(--main-color);
+  margin-top: -8px;
+}
+.restart-pop-up .btns .back-btn,
+.result-pop-up .btns .quit-btn {
+  background-color: var(--gray-color);
+  box-shadow: inset 0px -5px 0px #6b8997;
+}
+.restart-pop-up .btns .rest-btn,
+.result-pop-up .btns .next-btn {
+  background-color: var(--yellow-color);
+  box-shadow: inset 0px -8px 0px #cc8b13;
+}
+.result-pop-up > p {
+  color: var(--gray-color);
+}
+.poped::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.space img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  width: 50%;
+}
+.o-winning {
+  background-color: var(--yellow-color) !important;
+  box-shadow: inset 0px -8px 0px #cc8b13 !important;
+}
+.x-winning {
+  background-color: var(--blue-color) !important;
+  box-shadow: rgb(49, 195, 189) 0px -8px 0px inset !important;
+}
+.x-wins {
+  color: var(--blue-color);
+}
+.o-wins {
+  color: var(--yellow-color);
+}
+.tied {
+  color: var(--gray-color);
+}
