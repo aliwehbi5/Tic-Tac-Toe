@@ -12,13 +12,14 @@ let oScore = document.querySelector(".o-score").textContent;
 let xScore = document.querySelector(".x-score").textContent;
 let tieScore = document.querySelector(".tie-score").textContent;
 let gameover = false;
+let winner = null;
 let counter = 0;
 let filled = 0;
 let turn;
 let opTurn;
 let link;
 let gameType;
-let winner;
+
 
 activeChoice();
 changeTurn();
