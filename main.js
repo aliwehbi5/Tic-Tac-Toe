@@ -20,7 +20,6 @@ let opTurn;
 let link;
 let gameType;
 
-
 activeChoice();
 changeTurn();
 
@@ -84,10 +83,7 @@ spaces.forEach((space) => {
       }
       if (filled == spaces.length - 1) {
         if (winner === null) {
-          console.log(winner);
-
           tieScore = +tieScore + 1;
-          console.log(tieScore);
           document.querySelector(".tie-score").textContent = tieScore;
           setTimeout(() => {
             result(winner);
@@ -215,9 +211,7 @@ function cpuFill(turn) {
     filled = document.querySelectorAll(".filled").length;
     if (filled === spaces.length) {
       if (winner === null) {
-        console.log(winner);
         tieScore = +tieScore + 1;
-        console.log(tieScore + "a");
         document.querySelector(".tie-score").textContent = tieScore;
         setTimeout(() => {
           result(winner);
@@ -311,14 +305,12 @@ function getRandomIndex(max) {
 function checkWinner(winner) {
   if (winner === "x") {
     xScore = +xScore + 1;
-    console.log(xScore);
     document.querySelector(".x-score").textContent = xScore;
     setTimeout(() => {
       result(winner);
     }, 1000);
   } else if (winner === "o") {
     oScore = +oScore + 1;
-    console.log(oScore);
     document.querySelector(".o-score").textContent = oScore;
     setTimeout(() => {
       result(winner);
